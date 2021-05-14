@@ -1,0 +1,11 @@
+---
+# defaults file for tangrama.motd
+hostname: "localhost"
+
+motd_info:
+  - " FQDN:    ": "{{ ansible_fqdn }}"
+  - " Distro:  ": "{{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}"
+  - " Virtual: ": "{{ 'YES' if ansible_virtualization_role == 'guest' else 'NO' }}\n"
+  - " CPUs:    ": "{{ ansible_processor_vcpus }}"
+  - " RAM:     ": "{{ (ansible_memtotal_mb / 1000) | round(1) }}GB"
+  - " Service: ": "Add your services here"

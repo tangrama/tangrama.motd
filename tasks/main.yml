@@ -1,0 +1,8 @@
+---
+# tasks file for tangrama.motd
+- name: Setup new MOTD
+  become: true
+  template:
+    src: motd.j2
+    dest: /etc/motd
+    mode: 0644

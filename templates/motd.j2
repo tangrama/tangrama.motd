@@ -1,0 +1,13 @@
+********************************************************
+
+Welcome to {{hostname}}!
+
+{% for item in motd_info %}
+{% for key, value in item.items() %}
+{{ key }}{{ value }}
+{% endfor %}
+{% endfor %}
+
+Last Ansible provisioning: {{ ansible_date_time.iso8601 }}
+
+********************************************************
